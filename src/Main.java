@@ -1,0 +1,11 @@
+import metodos.MetodoVariable;
+
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+void main() {
+    MetodoVariable.variosParametros("Luis", 10, 20, 30);
+    int[] Edades = {5, 10, 20, 34};
+    for (int edad : Edades){
+        System.out.println("edad = " + edad);
+    }
+}
