@@ -1,5 +1,8 @@
 import figuras.Circulo;
 import figuras.FiguraGeometrica;
+import idiomas.Frances;
+import idiomas.Ingles;
+import idiomas.Traductor;
 import metodos.MetodoVariable;
 import figuras.Rectangulo;
 
@@ -15,8 +18,15 @@ void main() {
     //Esto da error ya que no se puede instanciar una clase abstracta
     //FiguraGeometrica figuraGeometrica = new FiguraGeometrica();
     //La forma correcta es la del polimorfismo
-    FiguraGeometrica figuraGeometrica = new Rectangulo();
-    figuraGeometrica.dibujar();
-    figuraGeometrica = new Circulo();
-    figuraGeometrica.dibujar();
+//    FiguraGeometrica figuraGeometrica = new Rectangulo();
+//    figuraGeometrica.dibujar();
+//    figuraGeometrica = new Circulo();
+//    figuraGeometrica.dibujar();
+
+    //las interfaces no se pueden instanciar, pero si pueden funcionar como super clases
+    Traductor ingles = new Ingles();
+    ingles.traducir();
+    Traductor frances = new Frances();
+    frances.iniciarTraductor();
+    frances.traducir();
 }
