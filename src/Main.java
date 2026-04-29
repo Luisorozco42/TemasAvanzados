@@ -1,4 +1,7 @@
+import figuras.Circulo;
+import figuras.FiguraGeometrica;
 import metodos.MetodoVariable;
+import figuras.Rectangulo;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -8,4 +11,12 @@ void main() {
     for (int edad : Edades){
         System.out.println("edad = " + edad);
     }
+
+    //Esto da error ya que no se puede instanciar una clase abstracta
+    //FiguraGeometrica figuraGeometrica = new FiguraGeometrica();
+    //La forma correcta es la del polimorfismo
+    FiguraGeometrica figuraGeometrica = new Rectangulo();
+    figuraGeometrica.dibujar();
+    figuraGeometrica = new Circulo();
+    figuraGeometrica.dibujar();
 }
