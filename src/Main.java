@@ -1,3 +1,5 @@
+import excepciones.Aritmetica;
+import excepciones.Excepcion;
 import figuras.Circulo;
 import figuras.FiguraGeometrica;
 import idiomas.Frances;
@@ -32,8 +34,32 @@ void main() {
 //    frances.traducir();
 
     //bueno ahora viene el concepto de los java beans
-    Persona persona = new Persona();
-    persona.setNombre("Luis");
-    persona.setApellido("Orozco");
-    System.out.println(persona);
+//    Persona persona = new Persona();
+//    persona.setNombre("Luis");
+//    persona.setApellido("Orozco");
+//    System.out.println(persona);
+
+    Excepcion excepcion = new Excepcion();
+    excepcion.setValor1(10);
+    excepcion.setValor2(0);
+
+    try {
+        var resultado = excepcion.getValor1()/excepcion.getValor2();
+        System.out.println("resultado = " + resultado);
+    }catch (Exception e){
+        System.out.println("Ocurrio un error" + e);
+    }
+
+
+    try {
+        var resultado = Aritmetica.division(excepcion.getValor1(), excepcion.getValor2());
+        System.out.println("resultado = " + resultado);
+    }catch (Exception e){
+        System.out.println("Ocurrio un error" + e);
+
+    }
+
+    finally { //Se ejecuta si o si. Esto es independiente de que si ocurrio un error o no
+        System.out.println("Se reviso la division entre 0");
+    }
 }
