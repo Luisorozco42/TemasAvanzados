@@ -1,10 +1,11 @@
-package maquina_snack;
+package maquina_snacks_archivos.servicio;
 
-import java.security.PublicKey;
+import maquina_snacks_archivos.dominio.Snack;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Snacks {
+public class ServicioSnackLista implements IServiciosSnacks {
 
     private static final List<Snack> snacks;
 
@@ -16,11 +17,11 @@ public class Snacks {
         snacks.add(new Snack("Sandwich", 1120));
     }
 
-    public static void agregarSnack(Snack snack){
+    public void agregarSnack(Snack snack){
         snacks.add(snack);
     }
 
-    public static void mostrarSnacks(){
+    public void mostrarSnacks(){
         var inventarioSnacks = "";
         for (Snack snack :snacks){
             inventarioSnacks += snack +"\n";
@@ -29,5 +30,5 @@ public class Snacks {
         System.out.println(inventarioSnacks);
     }
 
-    public static   List<Snack> getSnacks() {return snacks;}
+    public List<Snack> getSnacks() {return snacks;}
 }
