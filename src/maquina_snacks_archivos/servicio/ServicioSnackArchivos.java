@@ -49,7 +49,7 @@ public class ServicioSnackArchivos implements IServiciosSnacks {
                 var precio = Double.parseDouble(lineaSnack[2]);
                 var snack = new Snack(nombre, precio);
                 //agregamos a la lista el snack
-                this.snacks.add(snack);
+                snacks.add(snack);
             }
         }catch (Exception e){
             System.out.println("Error al recuperar los snacks del archivo" + e);
@@ -91,13 +91,13 @@ public class ServicioSnackArchivos implements IServiciosSnacks {
         System.out.println("--- Snacks en el inventario ---");
         var inventarioSnacks = "";
         for (var snack : this.snacks){
-            inventarioSnacks += snack + "\n";
+            inventarioSnacks += snack.toString() + "\n";
         }
         System.out.println(inventarioSnacks);
     }
 
     @Override
     public List<Snack> getSnacks() {
-        return List.of();
+        return this.snacks;
     }
 }
