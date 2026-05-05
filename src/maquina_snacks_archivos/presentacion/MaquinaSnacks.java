@@ -15,7 +15,7 @@ public class MaquinaSnacks {
     public static void maquinaSnacks(){
         var salir = false;
         var consola = new Scanner(System.in);
-        //Creamos el objeto para obtener el serviccio de snacks
+        //Creamos el objeto para obtener el servicio de snacks
         IServiciosSnacks serviciosSnacks = new ServicioSnackArchivos();
         //Creamos la lista de productos
         List<Snack> productos = new ArrayList<>();
@@ -40,7 +40,8 @@ public class MaquinaSnacks {
                 1. Comprar Snack
                 2. Mostrar Tiquet
                 3. Agregar Nuevo Snack
-                4. Salir
+                4. Mostrar inventario snacks
+                5. Salir
                 Elige una opcion:\s""");
         return Integer.parseInt(consola.nextLine());
     }
@@ -52,10 +53,15 @@ public class MaquinaSnacks {
             case 1 -> comprarSnack(consola, productos, serviciosSnacks);
             case 2 -> mostarTicket(productos);
             case 3 -> agregarNuevoSnack(consola, serviciosSnacks);
-            case 4 -> salir = true;
+            case 4 -> listarInventarioSnacks(consola, serviciosSnacks);
+            case 5 -> salir = true;
             default -> System.out.println("Opcion Invalida");
         }
         return salir;
+    }
+
+    private static void listarInventarioSnacks(Scanner consola, IServiciosSnacks serviciosSnacks) {
+        serviciosSnacks.mostrarSnacks();
     }
 
     private static void comprarSnack(Scanner consola, List<Snack> productos, IServiciosSnacks serviciosSnacks) {

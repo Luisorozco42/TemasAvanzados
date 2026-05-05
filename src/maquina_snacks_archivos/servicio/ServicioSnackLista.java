@@ -14,7 +14,7 @@ public class ServicioSnackLista implements IServiciosSnacks {
         snacks = new ArrayList<>();
         snacks.add(new Snack("Papas", 70));
         snacks.add(new Snack("Refresco", 50));
-        snacks.add(new Snack("Sandwich", 1120));
+        snacks.add(new Snack("Sandwich", 120));
     }
 
     public void agregarSnack(Snack snack){
@@ -24,11 +24,11 @@ public class ServicioSnackLista implements IServiciosSnacks {
     public void mostrarSnacks(){
         var inventarioSnacks = "";
         for (Snack snack :snacks){
-            inventarioSnacks += snack +"\n";
+            inventarioSnacks += snack.toString() +"\n";
         }
         System.out.println("--- Snacks en el inventario ---");
         System.out.println(inventarioSnacks);
     }
 
-    public List<Snack> getSnacks() {return snacks;}
+    public List<Snack> getSnacks() {return this.snacks;}
 }
